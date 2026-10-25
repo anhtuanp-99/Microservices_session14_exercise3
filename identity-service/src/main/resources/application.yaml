@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: identity-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/identity_db
+    username: postgres
+    password: pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8090
+
+# ===== JWT CONFIG =====
+app:
+  jwt:
+    secret: "vS6K5vH8N2zB4xR9mQ3pL1wT7yC5vH8N2zB4xR9mQ3pL1wT7yC5vH8N2z"
+    access-token-expiration: 900000       # 15 phút (ms)
+    refresh-token-expiration: 604800000   # 7 ngày (ms)
+
+logging:
+  level:
+    com.pharmacy.identityservice: DEBUG
